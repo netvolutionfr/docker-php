@@ -1,10 +1,5 @@
 <?php
-$serveur = "mysql";
-$dbname = "test";
-$dbuser = "test";
-$dbpassword = "test";
-$connexion = new PDO("mysql:host=$serveur;dbname=$dbname",$dbuser,$dbpassword);
-
+require_once('database.php');
 
 $req = $connexion->prepare("INSERT INTO contact (nom, prenom, email) VALUES (:nom, :prenom, :email)");
 $req->execute(array(
